@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Product Virture Fit</title>
-  <script type="module" crossorigin src="/assets/main-ByTAez_w.js"></script>
+    <title>Product Virture Turntable</title>
+  <script type="module" crossorigin src="/assets/turntable-BnhrbE5Z.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/index-BpBbR1cK.js">
   <link rel="stylesheet" crossorigin href="/assets/index-5B7Es_Bx.css">
 </head>
@@ -18,23 +18,13 @@
                     <label for="apiKey">API Key (새로고침하면 사라짐)</label>
                     <input id="apiKey" type="password" placeholder="Gemini AI Studio에서 발급한 키" />
                 </div>
-                <div>
-                    <label for="productCode">상품 코드</label>
-                    <input id="productCode" type="number" placeholder="상세페이지 경로 뒤에 숫자" value="24744" />
-                    <button id="saveProduct">상품 적용</button>
-                </div>
             </section>
             
             <section>
-                <h5>마이페이지 - 내 사진 저장</h5>
+                <h5>이미지 선택</h5>
                 <div>
-                    <label for="myPhoto">저장된 사진이 없으면 선택<br>(정면/전신/단색 배경 추천)</label>
-                    <input id="myPhoto" type="file" accept="image/*" />
-                    <button id="saveMyPhoto">내 사진 저장 (localStorage)</button>
-                </div>
-                <div>
-                    <label>저장된 사진</label>
-                    <img id="myPhotoPreview" alt="저장된 내 사진" />
+                    <label for="files">앞/옆/뒤 3장 이미지 선택</label>
+                    <input id="files" type="file" accept="image/*" multiple />
                 </div>
             </section>
         </div>
@@ -42,16 +32,16 @@
         <!-- ----- 상품 영역 ----- -->
         <div class="view">
             <div class="image_product">
-                <img id="productImage" alt="상품이미지" />
-                <button id="runTryOn">입어보기</button>
+                <!-- <img id="productImage" alt="상품이미지" /> -->
+                <button id="gen">턴테이블 영상 생성</button>
             </div>
         </div>
 
         <!-- ----- 결과 영역 ----- -->
         <div id="result" hidden>
             <div class="result_inner">
-                <img id="resultImg" alt="결과이미지" />
-                <a id="downloadLink" href="#" download="result.png">결과 이미지 다운로드</a>
+                <video id="video" controls style="max-width: 720px; width: 100%;"></video>
+                <button id="dl" disabled>영상 다운로드</button>
                 <button id="resultClose" type="button">X</button>
             </div>
         </div>
